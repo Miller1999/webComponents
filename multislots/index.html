@@ -7,7 +7,11 @@
 	</head>
 	<body>
 		<h2>Hola mundo exterior</h2>
-		<my-element>Soy texto fuera del componente</my-element>
+		<my-element>
+			<!-- Se usan los slot para que el componente entienda en que slot debe renderizar -->
+			<span slot="title">Soy el titulo</span>
+			<span slot="parrafo">Soy el parrafo</span>
+		</my-element>
 		<script type="module" src="./my-element.js"></script>
 	</body>
 </html>
