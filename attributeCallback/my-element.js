@@ -7,15 +7,16 @@ class myElement extends HTMLElement {
 	static get observedAttributes() {
 		return ["title", "parrafo", "img"];
 	}
-	// Se selecciona el atributo que se quiere y se observa si ha cambiado, si si se actualiza al nuevo valor si no se deja el valor que ya estaba
-	/*
+
+	attributeChangedCallback(attr, oldValue, newVal) {
+		// Se selecciona el atributo que se quiere y se observa si ha cambiado, si si se actualiza al nuevo valor si no se deja el valor que ya estaba
+		/*
 		Este es el codigo de la clase pero se vuelve poco practico a medida que se aumentan los atributos
 		if (actualValue === "title") this.title = newVal;
 		if (actualValue === "parrafo") this.parrafo = newVal;
 		if (actualValue === "img") this.img = newVal;
 		Por lo tanto se usa la forma de abajo para acceder al atributo que se quiere esto con la nomeclatura de objeto object[attr], de esta manera no se usan ifs y tampoco se comete errores de typo
 		*/
-	attributeChangedCallback(attr, oldValue, newVal) {
 		this[attr] = newVal;
 	}
 	getStyles() {
