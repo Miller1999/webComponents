@@ -2,6 +2,7 @@ class myElement extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: "open" });
+		// Se obtienen los atributos
 		this.title = this.getAttribute("title");
 		this.parrafo = this.getAttribute("parrafo");
 		this.img = this.getAttribute("img");
@@ -17,8 +18,7 @@ class myElement extends HTMLElement {
 	}
 	getTemplate() {
 		const template = document.createElement("template");
-		// Se agrega slot para poder ingresar informacion desde afuera del componente
-		// Con el atributo name se puede renderizar mas de un slot
+		// Se utilizan los atributos obtenidos en el constructor
 		template.innerHTML = `
 			<section>
 				<h2>${this.title}</h2>
